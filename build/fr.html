@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
+
+  <title>[[TITLE]]</title>
+  <meta name="yandex-verification" content="[[YANDEX-VERIFICATION]]">
+  <meta name="description" content="[[DESCRIPTION]]">
+  <meta name="keywords" content="[[KEYWORDS]]">
+  <meta property="og:image" content="[[OG_IMAGE]]">
+  <meta property="og:title" content="[[OG_TITLE]]">
+
+  <link rel="icon" href="[[FAVICON]]" type="image/[[FAVICON_TYPE]]">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" type="text/css" rel="stylesheet">
+  <script src="https://unpkg.com/imask"></script>
+  <link rel="stylesheet" href="sienge/css/style.css">
+</head>
+
+  <body>
+    <header class="main-header">
+  <div class="main-header__wrap container">
+    <button class="main-header__burgerButton" type="button">
+      <svg aria-hidden="true" width="36" height="36">
+        <use class="" href="sienge/img/sprite.svg#icon-menu-burger"></use>
+      </svg>
+      Открыть меню
+    </button>
+
+    <div class="main-header__left">
+      <a class="main-header__logo logo" href="/">
+        <img class="logo__img" src="" width="130" height="34" alt="">
+      </a>
+
+      <a class="main-header__catalogLink" href="/catalog">
+        <button class="main-header__catalogButton js--catalogButton" type="button">Каталог товаров</button>
+      </a>
+
+      <section class="main-header__popup popup js--catalogPopup">
+        <div class="popup__wrap">
+          <button class="popup__closeButton" type="button">Закрыть</button>
+          <a class="popup__logo logo" href="/">
+            <img class="logo__img" src="" width="130" height="34" alt="">
+          </a>
+          <div class="catalog js--catalog">
+            <a class="catalog__title" href="/catalog">Каталог</a>
+            <ul class="catalog__list"></ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="main-header__center">
+      <div class="popup__wrap popup__wrap--centerHeader">
+        <button class="popup__closeButton" type="button">Закрыть</button>
+        <a class="popup__logo logo" href="/">
+          <img class="logo__img" src="" width="130" height="34" alt="">
+        </a>
+        <div class="main-header__wrapCenter">
+          <div class="main-header__contact contact contact--header">
+            <button class="contact__city js--shopCity hide" type="button"></button>
+            <a class="contact__phone js--shopPhone" href="">
+              <span></span>
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-phone"></use>
+              </svg>
+            </a>
+            <button class="main-header__oldDesignButton hide" type="button" id="toggle_old_design">Старый дизайн</button>
+    
+            <section class="contact__popup popup js--cityListPopup">
+              <div class="popup__wrap">
+                <button class="popup__closeButton" type="button">Закрыть</button>
+                <a class="popup__logo logo" href="/">
+                  <img class="logo__img" src="" width="130" height="34" alt="">
+                </a>
+                <div class="cities cities--popular js--cityListData"></div>
+                <div class="cities cities--alphabet js--alphabetCityListData"></div>
+              </div>
+            </section>
+    
+          </div>
+    
+          <nav class="main-header__nav nav">
+
+            <a class="nav__catalogLink" href="/catalog">
+              <button class="nav__catalogButton js--catalogButton" type="button">Каталог</button>
+            </a>
+
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="/contact">Магазины</a>
+              </li>
+              <li class="nav__item js--bonusNavItem">
+                <a href="/oplata#bonus">Бонусы</a>
+              </li>
+              <li class="nav__item">
+                <a href="/garant">Гарантия</a>
+              </li>
+              <li class="nav__item">
+                <a href="/delivery">Доставка</a>
+              </li>
+              <li class="nav__item js--franchiseNavItem">
+                <a href="/fr">Сотрудничество</a>
+              </li>
+              <li class="nav__item">
+                <a href="/response">Обратная связь</a>
+              </li>
+              <li class="nav__item nav__item--about js--aboutNavItem">
+                <a href="/about">О компании</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        
+      </div>
+    </div>
+
+    
+    <div class="main-header__right">
+      <div class="main-header__search search" data-show-result="false">
+        <form class="search__form" action="/search" id="search" method="get">
+          <input class="search__input" type="search" name="s" placeholder="Поиск по товарам" autocomplete="off">
+          <button class="search__clearButton" type="button" data-mode="hide">Очистить
+            <svg aria-hidden="true" width="14" height="14">
+              <use class="" href="sienge/img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <button class="search__button" type="submit">Найти
+            <svg aria-hidden="true" width="18" height="18">
+              <use class="" href="sienge/img/sprite.svg#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+        <div class="search__result"></div>
+      </div>
+
+      <button class="main-header__searchButton" type="button">Поиск
+        <svg aria-hidden="true" width="22" height="22">
+          <use class="" href="sienge/img/sprite.svg#icon-search"></use>
+        </svg>
+      </button>
+      <button class="main-header__cancelSearchButton" type="button">
+        Отменить
+      </button>
+
+      <div class="main-header__userBlock userBlock">
+        <ul class="userBlock__list">
+          <li class="userBlock__item userBlock__item--main">
+            <a href="/">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-home"></use>
+              </svg>
+              Главная
+            </a>
+          </li>
+          <li class="userBlock__item userBlock__item--catalog">
+            <a href="/catalog">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-search"></use>
+              </svg>
+              Каталог
+            </a>
+          </li>
+          <li class="userBlock__item userBlock__item--contacts">
+            <a href="/contact">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-phone"></use>
+              </svg>
+              Контакты
+            </a>
+          </li>
+          <li class="userBlock__item userBlock__item--user">
+            <button class="js--authorizationButton" type="button">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-user"></use>
+              </svg>
+              <span>...</span>
+            </button>
+          </li>
+          <li class="userBlock__item userBlock__item--basket">
+            <a class="js--cartHeaderLink" href="/cart" data-count="">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-basket"></use>
+              </svg>
+              Корзина
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main class="main-page franchise-page">
+      <div class="franchise-page__wrap container">
+        <section class="franchise-page__header">
+          <h1 class="franchise-page__headerTitle">[[H1]]</h1>
+
+          <div class="franchise-page__headerBannerWrap">
+            <img class="franchise-page__bannerImage" src="/img/banner_franch_1400х536.jpg" width="1400">
+            <div class="franchise-page__linkWrap">
+              <a class="franchise-page__linkButton franchise-page__linkButton--presentation" href="/eto1.ru-presentation.pdf" target="_blank">Презентация компании</a>
+              <a class="franchise-page__linkButton franchise-page__linkButton--business" href="/eto1.ru-business.pdf" target="_blank">Бизнес-план</a>
+            </div>
+          </div>
+
+          <p class="franchise-page__text">Начинайте или развивайте бизнес с франшизой «eto1.ru»!<br>
+          Это просто, ведь вам не нужно отвечать за маркетинг, бизнес-процессы и работать над продвижением интернет-магазина.</p>
+          
+          <p class="franchise-page__text">Региональная розничная сеть «eto1.ru» предлагает вам открыть магазин по франшизе в своем городе и повысить прибыльность вашего бизнеса.<br>
+          Бренд «eto1.ru» - это успешный, готовый франчайзинговый бизнес-проект, существующий на розничном рынке с 2012 года.</p>
+        </section>
+
+        <section class="franchise-page__offer">
+          <h2 class="franchise-page__title">Вместе к прибыльному бизнесу</h2>
+
+          <dl class="franchise-page__offerList">
+            <div class="franchise-page__offerItem">
+              <dt>Помещение.</dt>
+              <dd>Компания eto1.ru совместно с партнером ведет поиск и подбор помещения, после согласования коммерческих условий и обоснования открытия магазина на основании расчетов по рентабельности проекта согласуется договор аренды и подписывается с партнером</dd>
+            </div>
+
+            <div class="franchise-page__offerItem">
+              <dt>Дизайн проект.</dt>
+              <dd>Партнер предоставляет подрядчику компании eto1.ru план и фото помещения. Подрядчик разрабатывает дизайн-проект для будущего магазина партнера. Проект отправляется на согласование арендодателю. Дизайн-проект включает в себя визуализацию и просчет помещения с торговым оборудованием.</dd>
+            </div>
+            
+            <div class="franchise-page__offerItem">
+              <dt>Строительно-монтажные работы.</dt>
+              <dd>eto1.ru предоставляет партнеру Бренд Бук компании с полной информацией о магазине. Партнер выходит на ремонт и отделку помещения. eto1.ru помогает курировать ремонтные работы в магазине.</dd>
+            </div>
+          
+            <div class="franchise-page__offerItem">
+              <dt>Оборудование и оформление магазина.</dt>
+              <dd>Партнеру предоставляется Бренд Бук по торговому оборудованию и информация по IT и кассовому оборудованию. Частично затраты на производство и закупку оборудования как торгового так и IT компенсируются компанией eto1.ru.</dd>
+            </div>
+
+            <div class="franchise-page__offerItem">
+              <dt>Товарное наполнение.</dt>
+              <dd>Компания eto1.ru совместно с партнером формирует объем первичной отгрузки.</dd>
+            </div>
+
+            <div class="franchise-page__offerItem">
+              <dt>Подбор и обучение персонала.</dt>
+              <dd>eto1.ru содействует в поиске кандидатуры сотрудников магазина для собеседования, а также обеспечивает обучение успешных кандидатов в магазине. Партнеру предоставляются обучающие материалы и документы необходимые для дальнейшей работы магазина.</dd>
+            </div>
+
+            <div class="franchise-page__offerItem">
+              <dt>Открытие магазина.</dt>
+              <dd>Запуск магазина вместе с группой открытия eto1.ru, приезд мерчандайзера - помощь в выкладке товара и обучения сотрудников на местах, открытие магазина в соответствии с праздничной программой, продвижением в SMM и последующей поддержкой, и кураторством магазина в дальнейшей работе.</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="franchise-page__facade">
+          <h2 class="franchise-page__title">Фасад магазина</h2>
+          <img class="franchise-page__facadeImage" src="/img/fasad.jpg" width="521">
+        </section>
+        
+        <section class="franchise-page__showroom">
+          <h2 class="franchise-page__title">Салон магазина</h2>
+          <ul class="franchise-page__showroomImageList">
+            <li class="franchise-page__showroomImageItem">
+              <img src="/img/salon1.jpg" width="420">
+            </li>
+            <li class="franchise-page__showroomImageItem">
+              <img src="/img/salon2.jpg" width="420">
+            </li>
+            <li class="franchise-page__showroomImageItem">
+              <img src="/img/salon3.jpg" width="420">
+            </li>
+            <li class="franchise-page__showroomImageItem">
+              <img src="/img/salon4.jpg" width="420">
+            </li>
+            <li class="franchise-page__showroomImageItem">
+              <img src="/img/salon5.jpg" width="420">
+            </li>
+            <li class="franchise-page__showroomImageItem">
+              <img src="/img/salon6.jpg" width="420">
+            </li>
+          </ul>
+        </section>
+
+        <section class="franchise-page__features">
+          <h2 class="franchise-page__title">Это выгодно</h2>
+
+          <div class="franchise-page__featuresWrap">
+            <ul class="franchise-page__featuresList franchise-page__featuresList--main">
+              <li>Готовый бизнес за&nbsp;45&nbsp;дней</li>
+              <li>Минимальные затраты</li>
+              <li>Поддержка на всех этапах открытия магазина</li>
+              <li>Отсутствие скрытых платежей</li>
+              <li>Срок окупаемости 12-18&nbsp;месяцев</li>
+              <li>Требования к площади магазина от 100 до 200&nbsp;м<sup>2</sup></li>
+              <li>Низкая цена входа от 900 000 рублей под ключ с товарным наполнением</li>
+            </ul>
+  
+            <ul class="franchise-page__featuresList">
+              <li>Поддержка отдела маркетинга</li>
+              <li>Помощь в формировании заказов</li>
+              <li>Содействие в подготовке рекламных материалов, аудио- и видео-роликов</li>
+              <li>Рекомендации по мерчандайзингу и оформлению витрин</li>
+              <li>Помощь в организации маркетинговых мероприятий</li>
+              <li>Аналитика продаж и остатков каждого магазина, внедрение методик и технологий для увеличения продаж</li>
+              <li>Методическая и консультационная поддержка при запуске и дальнейшем функционировании магазина</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="franchise-page__contact">
+          <h2 class="visuallyhidden">Контакты</h2>
+          <p class="franchise-page__email">
+            <a href="mailto:info.evrikom@gmail.com">info.evrikom@gmail.com</a>
+          </p>
+          <button class="franchise-page__callbackButton" type="">Обратный звонок</button>
+        </section>
+      </div>
+
+      <section class="modal js--callbackModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__wrap">
+          <button class="modal__closeButton" type="button">Закрыть</button>
+          <h2 class="modal__title">Обратная связь</h2>
+          <p class="modal__text modal__text--center">Сообщение в нашу службу поддержки</p>
+  
+          <form class="modal__form" action="">
+            <div class="input">
+              <label for="name"><span>*</span> Ваше имя:</label>
+              <input type="text" name="name" id="name" required="">
+            </div>
+
+            <div class="input">
+              <label for="phone"><span>*</span> Телефон:</label>
+              <input type="tel" name="phone" id="phone" required="">
+            </div>
+
+            <div class="input">
+              <label for="email">E-mail:</label>
+              <input type="email" name="email" id="email">
+            </div>
+
+            <div class="input">
+              <label for="city"><span>*</span> Ваш город:</label>
+              <input type="text" name="city" id="city" required="">
+            </div>
+
+            <div class="input input--capture">
+              <label for="capture"><span>*</span> Код с картинки:</label>
+              <div class="input__wrapCapture">
+                <img src="/capture.php?12654" alt="">
+                <input type="text" name="capture" id="capture" required="" placeholder="Код с картинки">
+              </div>
+            </div>
+
+            <p class="modal__errorMessage"></p>
+
+            <div class="modal__buttonWrap" data-mode="button">
+              <button class="modal__button js--sendRequestButton" type="button">Отправить заявку</button>
+              <div class="modal__progress">
+                <img src="/sienge/img/load_bar.gif" alt="">
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="main-footer">
+  <div class="main-footer__wrap container">
+    <div class="main-footer__left">
+      <a class="main-footer__addresses" href="/contact">Адреса магазинов</a>
+      
+      <div class="main-footer__contact contact contact--footer">
+        <a class="contact__phone js--shopPhone" href=""><span></span></a>
+        <button class="contact__city js--shopCity hide" type="button"></button>
+      </div>
+      
+      <div class="main-footer__social social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="#">ВКонтакте
+              <svg aria-hidden="true" width="22" height="22">
+                <use class="" href="sienge/img/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-footer__right">
+      <div class="main-footer__footer-nav footer-nav">
+        <ul class="footer-nav__list">
+          <li class="footer-nav__item">
+            <a href="/about">О компании</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/response">Обратная связь</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/jobs?resume">Вакансии</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/news">Новости</a>
+          </li>
+          <li class="footer-nav__item js--franchiseNavItem">
+            <a href="/fr">Сотрудничество</a>
+          </li>
+        </ul>
+
+        <ul class="footer-nav__list">
+          <li class="footer-nav__item js--bonusNavItem">
+            <a href="/oplata#bonus">Бонусная программа</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/credit">Кредиты</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/delivery">Доставка</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/oplata">Способ оплаты</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/garant">Обмен и возврат товара</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+    <section class="modal authorization js--authorizationModal" data-mode="login">
+  <div class="modal__overlay"></div>
+  <div class="modal__wrap" style="max-width: 500px;">
+    <button class="modal__closeButton" type="button">Закрыть</button>
+
+    <div class="authorization__screen authorization__screen--login">
+      <h2 class="modal__title" style="text-align: left;">Вход / регистрация</h2>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--phoneInput" type="tel" placeholder=" " name="phone">
+        <label>Телефон*</label>
+      </p>
+      
+      <p class="modal__errorMessage"></p>
+
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--getAuthCodeButton" type="button">Получить код</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+
+      <button class="authorization__button modal__button js--inputAuthCodeButton" type="button">Ввести код</button>
+      <button class="modal__link js--loginPasswordButton" type="button">Вход по паролю</button>
+    </div>
+
+    <div class="authorization__screen authorization__screen--code">
+      <div class="modal__titleWrap">
+        <button class="modal__backButton" type="button">
+          <svg aria-hidden="true" width="24" height="24">
+            <use class="" href="sienge/img/sprite.svg#arrow-left"></use>
+          </svg>
+          Назад
+        </button>
+        <h2 class="modal__title modal__title--left">Введите SMS-код</h2>
+      </div>
+
+      <p class="input-placeholder">
+        <input class="js--codeInput" type="number" placeholder=" " name="code" id="code">
+        <label>Код из SMS*</label>
+      </p>
+
+      <p class="modal__text modal__text--grey js--sendCodeText"></p>
+
+      <p class="modal__errorMessage"></p>
+
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--setAuthCodeButton" type="button">Ввести код</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+
+      <p class="modal__text modal__text--grey js--timerGetCodeText" style="margin-bottom: 0;">Запросить новый код <br>вы сможете через 10 минут</p>
+    </div>
+
+    <div class="authorization__screen authorization__screen--loginPassword">
+      <div class="modal__titleWrap">
+        <button class="modal__backButton" type="button">
+          <svg aria-hidden="true" width="24" height="24">
+            <use class="" href="sienge/img/sprite.svg#arrow-left"></use>
+          </svg>
+          Назад
+        </button>
+        <h2 class="modal__title modal__title--left">Вход по паролю</h2>
+      </div>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--loginInput" type="text" placeholder=" " name="login" id="login">
+        <label>Email или телефон*</label>
+      </p>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--passwordInput" type="password" placeholder=" " name="password" id="password">
+        <label>Пароль*</label>
+      </p>
+
+      <button class="modal__link js--recoveryPasswordButton" type="button">Забыли пароль?</button>
+      <p class="modal__text js--sendPasswordText"></p>
+
+      <p class="modal__errorMessage"></p>
+
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--loginButton" type="button">Войти</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="authorization__screen authorization__screen--recoveryPassword">
+      <div class="modal__titleWrap">
+        <button class="modal__backButton" type="button">
+          <svg aria-hidden="true" width="24" height="24">
+            <use class="" href="sienge/img/sprite.svg#arrow-left"></use>
+          </svg>
+          Назад
+        </button>
+        <h2 class="modal__title modal__title--left">Восстановление пароля</h2>
+      </div>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--loginInput" type="text" placeholder=" " name="login2" id="login2">
+        <label>Email или телефон*</label>
+      </p>
+      
+      <p class="modal__errorMessage"></p>
+      
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--getPasswordButton" type="button">Напомнить</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <script jstcache="0">
+  const shopListData = [[SHOP_LIST]];
+</script>
+    <script jstcache="0">
+  const shopInfoData = [[SHOP_INFO]];
+</script>
+    <script jstcache="0">
+  const catalogList = [[GROUP_LIST]];
+</script>
+
+    <script src="sienge/js/script.js"></script>
+    <script src="sienge/js/page-franchise.js"></script>
+    
+    [[COUNTERS]]
+  </body>
+</html>

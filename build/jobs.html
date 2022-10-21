@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
+
+  <title>[[TITLE]]</title>
+  <meta name="yandex-verification" content="[[YANDEX-VERIFICATION]]">
+  <meta name="description" content="[[DESCRIPTION]]">
+  <meta name="keywords" content="[[KEYWORDS]]">
+  <meta property="og:image" content="[[OG_IMAGE]]">
+  <meta property="og:title" content="[[OG_TITLE]]">
+
+  <link rel="icon" href="[[FAVICON]]" type="image/[[FAVICON_TYPE]]">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" type="text/css" rel="stylesheet">
+  <script src="https://unpkg.com/imask"></script>
+  <link rel="stylesheet" href="sienge/css/style.css">
+</head>
+
+  <body>
+    <header class="main-header">
+  <div class="main-header__wrap container">
+    <button class="main-header__burgerButton" type="button">
+      <svg aria-hidden="true" width="36" height="36">
+        <use class="" href="sienge/img/sprite.svg#icon-menu-burger"></use>
+      </svg>
+      Открыть меню
+    </button>
+
+    <div class="main-header__left">
+      <a class="main-header__logo logo" href="/">
+        <img class="logo__img" src="" width="130" height="34" alt="">
+      </a>
+
+      <a class="main-header__catalogLink" href="/catalog">
+        <button class="main-header__catalogButton js--catalogButton" type="button">Каталог товаров</button>
+      </a>
+
+      <section class="main-header__popup popup js--catalogPopup">
+        <div class="popup__wrap">
+          <button class="popup__closeButton" type="button">Закрыть</button>
+          <a class="popup__logo logo" href="/">
+            <img class="logo__img" src="" width="130" height="34" alt="">
+          </a>
+          <div class="catalog js--catalog">
+            <a class="catalog__title" href="/catalog">Каталог</a>
+            <ul class="catalog__list"></ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="main-header__center">
+      <div class="popup__wrap popup__wrap--centerHeader">
+        <button class="popup__closeButton" type="button">Закрыть</button>
+        <a class="popup__logo logo" href="/">
+          <img class="logo__img" src="" width="130" height="34" alt="">
+        </a>
+        <div class="main-header__wrapCenter">
+          <div class="main-header__contact contact contact--header">
+            <button class="contact__city js--shopCity hide" type="button"></button>
+            <a class="contact__phone js--shopPhone" href="">
+              <span></span>
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-phone"></use>
+              </svg>
+            </a>
+            <button class="main-header__oldDesignButton hide" type="button" id="toggle_old_design">Старый дизайн</button>
+    
+            <section class="contact__popup popup js--cityListPopup">
+              <div class="popup__wrap">
+                <button class="popup__closeButton" type="button">Закрыть</button>
+                <a class="popup__logo logo" href="/">
+                  <img class="logo__img" src="" width="130" height="34" alt="">
+                </a>
+                <div class="cities cities--popular js--cityListData"></div>
+                <div class="cities cities--alphabet js--alphabetCityListData"></div>
+              </div>
+            </section>
+    
+          </div>
+    
+          <nav class="main-header__nav nav">
+
+            <a class="nav__catalogLink" href="/catalog">
+              <button class="nav__catalogButton js--catalogButton" type="button">Каталог</button>
+            </a>
+
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="/contact">Магазины</a>
+              </li>
+              <li class="nav__item js--bonusNavItem">
+                <a href="/oplata#bonus">Бонусы</a>
+              </li>
+              <li class="nav__item">
+                <a href="/garant">Гарантия</a>
+              </li>
+              <li class="nav__item">
+                <a href="/delivery">Доставка</a>
+              </li>
+              <li class="nav__item js--franchiseNavItem">
+                <a href="/fr">Сотрудничество</a>
+              </li>
+              <li class="nav__item">
+                <a href="/response">Обратная связь</a>
+              </li>
+              <li class="nav__item nav__item--about js--aboutNavItem">
+                <a href="/about">О компании</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        
+      </div>
+    </div>
+
+    
+    <div class="main-header__right">
+      <div class="main-header__search search" data-show-result="false">
+        <form class="search__form" action="/search" id="search" method="get">
+          <input class="search__input" type="search" name="s" placeholder="Поиск по товарам" autocomplete="off">
+          <button class="search__clearButton" type="button" data-mode="hide">Очистить
+            <svg aria-hidden="true" width="14" height="14">
+              <use class="" href="sienge/img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <button class="search__button" type="submit">Найти
+            <svg aria-hidden="true" width="18" height="18">
+              <use class="" href="sienge/img/sprite.svg#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+        <div class="search__result"></div>
+      </div>
+
+      <button class="main-header__searchButton" type="button">Поиск
+        <svg aria-hidden="true" width="22" height="22">
+          <use class="" href="sienge/img/sprite.svg#icon-search"></use>
+        </svg>
+      </button>
+      <button class="main-header__cancelSearchButton" type="button">
+        Отменить
+      </button>
+
+      <div class="main-header__userBlock userBlock">
+        <ul class="userBlock__list">
+          <li class="userBlock__item userBlock__item--main">
+            <a href="/">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-home"></use>
+              </svg>
+              Главная
+            </a>
+          </li>
+          <li class="userBlock__item userBlock__item--catalog">
+            <a href="/catalog">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-search"></use>
+              </svg>
+              Каталог
+            </a>
+          </li>
+          <li class="userBlock__item userBlock__item--contacts">
+            <a href="/contact">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-phone"></use>
+              </svg>
+              Контакты
+            </a>
+          </li>
+          <li class="userBlock__item userBlock__item--user">
+            <button class="js--authorizationButton" type="button">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-user"></use>
+              </svg>
+              <span>...</span>
+            </button>
+          </li>
+          <li class="userBlock__item userBlock__item--basket">
+            <a class="js--cartHeaderLink" href="/cart" data-count="">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-basket"></use>
+              </svg>
+              Корзина
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main class="main-page jobs-page" data-mode="resume">
+      <div class="jobs-page__wrap container">
+        <h1 class="visuallyhidden">[[H1]]</h1>
+        <ul class="jobs-page__navList">
+          <li class="jobs-page__navItem">
+            <button class="jobs-page__navButton" type="button" data-mode="resume">Резюме</button>
+          </li>
+          <li class="jobs-page__navItem">
+            <button class="jobs-page__navButton" type="button" data-mode="vacancy">Вакансии</button>
+          </li>
+        </ul>
+
+        <section class="jobs-page__section jobs-page__section--resume">
+          <h2 class="jobs-page__title">Анкета соискателя</h2>
+
+          <form class="jobs-page__form" action="">
+            <fieldset class="jobs-page__fieldset">
+              <legend>Основные данные</legend>
+
+              <div class="jobs-page__input input">
+                <label for="name"><span>*</span> ФИО полностью:</label>
+                <input type="text" name="name" id="name" required="">
+              </div>
+
+              <div class="jobs-page__2column">
+                <div class="jobs-page__input input">
+                  <label for="city"><span>*</span> Город/поселок, в котором претендуете на вакансию:</label>
+                  <select name="city" id="city"></select>
+                </div>
+  
+                <div class="jobs-page__input input">
+                  <label for="vacancy"><span>*</span> Вакансия, на которую Вы претендуете:</label>
+                  <select name="vacancy" id="vacancy"></select>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="jobs-page__fieldset">
+              <legend>Ваши контактные данные</legend>
+
+              <div class="jobs-page__2column">
+                <div class="jobs-page__input input">
+                  <label for="email">E-mail:</label>
+                  <input type="email" name="email" id="email">
+                </div>
+              </div>
+
+              <div class="jobs-page__2column">
+                <div class="jobs-page__input input" "="">
+                  <label for="phone1"><span>*</span> Основной номер мобильного телефона:</label>
+                  <input type="tel" name="phone" id="phone1" required="">
+                </div>
+              </div>
+
+              <div class="jobs-page__2column">
+                <div class="jobs-page__input input" "="">
+                  <label for="phone2">Дополнительный номер мобильного телефона:</label>
+                  <input type="tel" name="phone" id="phone2">
+                </div>
+              </div>
+
+              <p class="jobs-page__text"><span class="red">*</span> Какие месенджеры привязаны к номеру телефона:</p>
+
+              <div class="jobs-page__wrapCheckbox">
+                <p class="jobs-page__checkbox checkbox">
+                  <input class="checkbox__input" type="checkbox" id="messenger-whatsApp" name="messenger-whatsApp">
+                  <label class="checkbox__label" for="messenger-whatsApp">WhatsApp</label>
+                </p>
+  
+                <p class="jobs-page__checkbox checkbox">
+                  <input class="checkbox__input" type="checkbox" id="messenger-telegram" name="messenger-telegram">
+                  <label class="checkbox__label" for="messenger-telegram">Telegram</label>
+                </p>
+  
+                <p class="jobs-page__checkbox checkbox">
+                  <input class="checkbox__input" type="checkbox" id="messenger-viber" name="messenger-viber">
+                  <label class="checkbox__label" for="messenger-viber">Viber</label>
+                </p>
+  
+                <p class="jobs-page__checkbox checkbox">
+                  <input class="checkbox__input" type="checkbox" id="messenger-icq" name="messenger-icq">
+                  <label class="checkbox__label" for="messenger-icq">ICQ</label>
+                </p>
+              </div>
+
+              <div class="jobs-page__wrapCheckbox jobs-page__wrapCheckbox--other">
+                <p class="jobs-page__checkbox checkbox">
+                  <input class="checkbox__input" type="checkbox" id="messenger-other" name="messenger-other">
+                  <label class="checkbox__label" for="messenger-other">Другие:</label>
+                </p>
+
+                <div class="jobs-page__input input">
+                  <input type="text" name="messenger" id="messenger" placeholder="Укажите мессенджеры">
+                </div>
+              </div>
+
+              <div class="jobs-page__2column">
+                <div class="jobs-page__input input">
+                  <label for="link-vk">Ссылка на аккаунт во ВКонтакте:</label>
+                  <input type="url" name="link-vk" id="link-vk">
+                  <span class="jobs-page__note">Если аккаунта нет, то напишите «Нет»</span>
+                </div>
+  
+                <div class="jobs-page__input input">
+                  <label for="link-ok">Ссылка на аккаунт в Одноклассниках:</label>
+                  <input type="url" name="link-ok" id="link-ok">
+                  <span class="jobs-page__note">Если аккаунта нет, то напишите «Нет»</span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="jobs-page__fieldset">
+              <legend>Персональные данные</legend>
+              
+              <div class="jobs-page__2column">
+                <div class="jobs-page__input input">
+                  <label for="bday"><span>*</span> Дата рождения:</label>
+                  <input type="date" name="bday" id="bday" required="">
+                </div>
+
+                <div class="jobs-page__input input">
+                  <label for="bplace"><span>*</span> Место рождения:</label>
+                  <input type="text" name="bplace" id="bplace" required="">
+                </div>
+              </div>
+
+              <p class="jobs-page__text">Паспорт</p>
+
+              <div class="jobs-page__3column">
+                <div class="jobs-page__input input">
+                  <label for="passport-series"><span>*</span> Серия:</label>
+                  <input type="number" name="passport-series" id="passport-series" required="">
+                </div>
+                
+                <div class="jobs-page__input input">
+                  <label for="passport-number"><span>*</span> Номер:</label>
+                  <input type="number" name="passport-number" id="passport-number" required="">
+                </div>
+                
+                <div class="jobs-page__input input">
+                  <label for="passport-date"><span>*</span> Когда выдан:</label>
+                  <input type="date" name="passport-date" id="passport-date" required="">
+                </div>
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="passport-organization"><span>*</span> Кем выдан, код подразделения:</label>
+                <input type="text" name="passport-organization" id="passport-organization" required="">
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="address-registration"><span>*</span> Место постоянной регистрации (прописка в паспорте):</label>
+                <input type="text" name="address-registration" id="address-registration" required="">
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="address-actual"><span>*</span> Текущее место жительства:</label>
+                <input type="text" name="address-actual" id="address-actual" required="">
+              </div>
+            </fieldset>
+
+            <fieldset class="jobs-page__fieldset">
+              <legend>Образование</legend>
+
+              <div class="jobs-page__input input">
+                <label for="education-1">Образование 1:</label>
+                <input type="text" name="education-1" id="education-1">
+                <span class="jobs-page__note">Период обучения, учебное заведение, форма обучения (очное, заочное), специальность, квалификация по диплому</span>
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="education-2">Образование 2:</label>
+                <input type="text" name="education-2" id="education-2">
+                <span class="jobs-page__note">Период обучения, учебное заведение, форма обучения (очное, заочное), специальность, квалификация по диплому</span>
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="education-add">Дополнительное образование:</label>
+                <input type="text" name="education-add" id="education-add">
+                <span class="jobs-page__note">Курсы, тренинги</span>
+              </div>
+            </fieldset>
+
+            <fieldset class="jobs-page__fieldset">
+              <legend>Навыки</legend>
+
+              <p class="jobs-page__text"><span class="red">*</span> Знания, навыки, умения</p>
+
+              <p class="jobs-page__checkbox checkbox">
+                <input class="checkbox__input" type="checkbox" id="skill-1" name="skill-1">
+                <label class="checkbox__label" for="skill-1">Владение компьютером</label>
+              </p>
+
+              <p class="jobs-page__checkbox checkbox">
+                <input class="checkbox__input" type="checkbox" id="skill-2" name="skill-2">
+                <label class="checkbox__label" for="skill-2">Работа на кассовом аппарате</label>
+              </p>
+
+              <p class="jobs-page__checkbox checkbox">
+                <input class="checkbox__input" type="checkbox" id="skill-3" name="skill-3">
+                <label class="checkbox__label" for="skill-3">Водительские права</label>
+              </p>
+
+              <p class="jobs-page__checkbox checkbox">
+                <input class="checkbox__input" type="checkbox" id="skill-4" name="skill-4">
+                <label class="checkbox__label" for="skill-4">Наличие личного автомобиля</label>
+              </p>
+
+              <p class="jobs-page__checkbox checkbox">
+                <input class="checkbox__input" type="checkbox" id="skill-5" name="skill-5">
+                <label class="checkbox__label" for="skill-5">Опыт управления коллективом</label>
+              </p>
+
+              <p class="jobs-page__checkbox checkbox">
+                <input class="checkbox__input" type="checkbox" id="skill-6" name="skill-6">
+                <label class="checkbox__label" for="skill-6">Опыт в розничной торговле</label>
+              </p>
+
+              <div class="jobs-page__wrapCheckbox jobs-page__wrapCheckbox--other">
+                <p class="jobs-page__checkbox checkbox">
+                  <input class="checkbox__input" type="checkbox" id="skill-7" name="skill-7">
+                  <label class="checkbox__label" for="skill-7">Другое:</label>
+                </p>
+
+                <div class="jobs-page__input input">
+                  <input type="text" name="skill" id="skill">
+                </div>
+              </div>
+
+            </fieldset>
+
+            <fieldset class="jobs-page__fieldset">
+              <legend>Трудовая деятельность</legend>
+
+              <div class="jobs-page__input input">
+                <label for="job-1"><span>*</span> Трудовая деятельность 1:</label>
+                <textarea rows="4" name="job-1" id="job-1" required=""></textarea>
+                <span class="jobs-page__note">ВСЕ (включая неофициальные) места работы. Указать период работы, название организации, адрес и контактный телефон, сфера деятельности организации, должность в которой работали, основные обязанности, доход, причина увольнения</span>
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="job-2"><span>*</span> Трудовая деятельность 2:</label>
+                <textarea rows="4" name="job-2" id="job-2" required=""></textarea>
+                <span class="jobs-page__note">ВСЕ (включая неофициальные) места работы. Указать период работы, название организации, адрес и контактный телефон, сфера деятельности организации, должность в которой работали, основные обязанности, доход, причина увольнения</span>
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="job-3"><span>*</span> Трудовая деятельность 3:</label>
+                <textarea rows="4" name="job-3" id="job-3" required=""></textarea>
+                <span class="jobs-page__note">ВСЕ (включая неофициальные) места работы. Указать период работы, название организации, адрес и контактный телефон, сфера деятельности организации, должность в которой работали, основные обязанности, доход, причина увольнения</span>
+              </div>
+            </fieldset>
+
+            <fieldset class="jobs-page__fieldset">
+              <legend>Cемейное положение</legend>
+
+              <div class="jobs-page__3column">
+                <div class="jobs-page__input input">
+                  <label for="marriage"><span>*</span> Семейное положение:</label>
+                  <select name="marriage" id="marriage">
+                    <option value="0">--выберите из списка--</option>
+                    <option value="1">Женат/замужем</option>
+                    <option value="2">Холост/не замужем</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="partner-name">ФИО мужа/жены и место работы:</label>
+                <input type="text" name="partner-name" id="partner-name">
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="child-1">ФИО ребёнка:</label>
+                <input type="text" name="child-1" id="child-1">
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="child-2">ФИО ребёнка:</label>
+                <input type="text" name="child-2" id="child-2">
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="child-3">ФИО ребёнка:</label>
+                <input type="text" name="child-3" id="child-3">
+              </div>
+            </fieldset>
+
+            <fieldset class="jobs-page__fieldset">
+              <legend>Штрафы</legend>
+
+              <div class="jobs-page__input input">
+                <label for="debt"><span>*</span> Неоплаченные задолженности по штрафам, кредитам или другим судебным решениям:</label>
+                <select name="debt" id="debt">
+                  <option value="0">--выберите из списка--</option>
+                  <option value="1">Нет</option>
+                  <option value="2">Есть, но я их погашу в течение этой недели</option>
+                  <option value="3">Есть, погасить не могу</option>
+                </select>
+              </div>
+            </fieldset>
+
+            <fieldset class="jobs-page__fieldset">
+              <legend>Дополнительно</legend>
+
+              <div class="jobs-page__input input">
+                <label for="whyme"><span>*</span> Почему мы должны взять на работу именно Вас?</label>
+                <textarea rows="4" name="whyme" id="whyme" required=""></textarea>
+                <span class="jobs-page__note">Необходим развернутый, последовательный и аргументированный ответ</span>
+              </div>
+
+              <div class="jobs-page__input input">
+                <label for="about"><span>*</span> Дополнительная информация о Вас:</label>
+                <textarea rows="4" name="about" id="about" required=""></textarea>
+                <span class="jobs-page__note">Можно написать всё то, что не было описано выше: увлечения, спорт, цели в жизни</span>
+              </div>
+            </fieldset>
+
+            <p class="jobs-page__checkbox checkbox">
+              <input class="checkbox__input" type="checkbox" id="agreement" name="agreement">
+              <label class="checkbox__label" for="agreement">Согласен на обработку персональных данных и не возражаю против проверки вышеизложенных фактов</label>
+            </p>
+            
+            <div class="jobs-page__sendButtonWrap">
+              <button class="jobs-page__sendButton js--sendResumeButton" type="button" disabled="">Отправить</button>
+              <div class="jobs-page__progress">
+                <img src="/sienge/img/load_bar.gif" alt="">
+              </div>
+            </div>
+
+          </form>
+        </section>
+
+        <section class="jobs-page__section jobs-page__section--vacancy">
+          <h2 class="jobs-page__title">Вакансии</h2>
+          <ul class="jobs-page__list jobs-page__list--vacancy"></ul>
+        </section>
+
+        <section class="jobs-page__section jobs-page__section--success">
+          <h2 class="jobs-page__title">Анкета успешно отправлена</h2>
+        </section>
+      </div>
+    </main>
+
+    <footer class="main-footer">
+  <div class="main-footer__wrap container">
+    <div class="main-footer__left">
+      <a class="main-footer__addresses" href="/contact">Адреса магазинов</a>
+      
+      <div class="main-footer__contact contact contact--footer">
+        <a class="contact__phone js--shopPhone" href=""><span></span></a>
+        <button class="contact__city js--shopCity hide" type="button"></button>
+      </div>
+      
+      <div class="main-footer__social social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="#">ВКонтакте
+              <svg aria-hidden="true" width="22" height="22">
+                <use class="" href="sienge/img/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-footer__right">
+      <div class="main-footer__footer-nav footer-nav">
+        <ul class="footer-nav__list">
+          <li class="footer-nav__item">
+            <a href="/about">О компании</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/response">Обратная связь</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/jobs?resume">Вакансии</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/news">Новости</a>
+          </li>
+          <li class="footer-nav__item js--franchiseNavItem">
+            <a href="/fr">Сотрудничество</a>
+          </li>
+        </ul>
+
+        <ul class="footer-nav__list">
+          <li class="footer-nav__item js--bonusNavItem">
+            <a href="/oplata#bonus">Бонусная программа</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/credit">Кредиты</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/delivery">Доставка</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/oplata">Способ оплаты</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/garant">Обмен и возврат товара</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+    <section class="modal authorization js--authorizationModal" data-mode="login">
+  <div class="modal__overlay"></div>
+  <div class="modal__wrap" style="max-width: 500px;">
+    <button class="modal__closeButton" type="button">Закрыть</button>
+
+    <div class="authorization__screen authorization__screen--login">
+      <h2 class="modal__title" style="text-align: left;">Вход / регистрация</h2>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--phoneInput" type="tel" placeholder=" " name="phone">
+        <label>Телефон*</label>
+      </p>
+      
+      <p class="modal__errorMessage"></p>
+
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--getAuthCodeButton" type="button">Получить код</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+
+      <button class="authorization__button modal__button js--inputAuthCodeButton" type="button">Ввести код</button>
+      <button class="modal__link js--loginPasswordButton" type="button">Вход по паролю</button>
+    </div>
+
+    <div class="authorization__screen authorization__screen--code">
+      <div class="modal__titleWrap">
+        <button class="modal__backButton" type="button">
+          <svg aria-hidden="true" width="24" height="24">
+            <use class="" href="sienge/img/sprite.svg#arrow-left"></use>
+          </svg>
+          Назад
+        </button>
+        <h2 class="modal__title modal__title--left">Введите SMS-код</h2>
+      </div>
+
+      <p class="input-placeholder">
+        <input class="js--codeInput" type="number" placeholder=" " name="code" id="code">
+        <label>Код из SMS*</label>
+      </p>
+
+      <p class="modal__text modal__text--grey js--sendCodeText"></p>
+
+      <p class="modal__errorMessage"></p>
+
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--setAuthCodeButton" type="button">Ввести код</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+
+      <p class="modal__text modal__text--grey js--timerGetCodeText" style="margin-bottom: 0;">Запросить новый код <br>вы сможете через 10 минут</p>
+    </div>
+
+    <div class="authorization__screen authorization__screen--loginPassword">
+      <div class="modal__titleWrap">
+        <button class="modal__backButton" type="button">
+          <svg aria-hidden="true" width="24" height="24">
+            <use class="" href="sienge/img/sprite.svg#arrow-left"></use>
+          </svg>
+          Назад
+        </button>
+        <h2 class="modal__title modal__title--left">Вход по паролю</h2>
+      </div>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--loginInput" type="text" placeholder=" " name="login" id="login">
+        <label>Email или телефон*</label>
+      </p>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--passwordInput" type="password" placeholder=" " name="password" id="password">
+        <label>Пароль*</label>
+      </p>
+
+      <button class="modal__link js--recoveryPasswordButton" type="button">Забыли пароль?</button>
+      <p class="modal__text js--sendPasswordText"></p>
+
+      <p class="modal__errorMessage"></p>
+
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--loginButton" type="button">Войти</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="authorization__screen authorization__screen--recoveryPassword">
+      <div class="modal__titleWrap">
+        <button class="modal__backButton" type="button">
+          <svg aria-hidden="true" width="24" height="24">
+            <use class="" href="sienge/img/sprite.svg#arrow-left"></use>
+          </svg>
+          Назад
+        </button>
+        <h2 class="modal__title modal__title--left">Восстановление пароля</h2>
+      </div>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--loginInput" type="text" placeholder=" " name="login2" id="login2">
+        <label>Email или телефон*</label>
+      </p>
+      
+      <p class="modal__errorMessage"></p>
+      
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--getPasswordButton" type="button">Напомнить</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <script jstcache="0">
+  const cityListData = [[TOWN_LIST]];
+</script>
+    <script jstcache="0">
+  const shopListData = [[SHOP_LIST]];
+</script>
+    <script jstcache="0">
+  const shopInfoData = [[SHOP_INFO]];
+</script>
+    <script jstcache="0">
+  const catalogList = [[GROUP_LIST]];
+</script>
+    <script jstcache="0">
+  const jobList = [[JOB_LIST]];
+</script>
+
+    <script src="sienge/js/script.js"></script>
+    <script src="sienge/js/page-jobs.js"></script>
+    
+    [[COUNTERS]]
+  </body>
+</html>

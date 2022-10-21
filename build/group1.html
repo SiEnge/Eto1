@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
+
+  <title>[[TITLE]]</title>
+  <meta name="yandex-verification" content="[[YANDEX-VERIFICATION]]">
+  <meta name="description" content="[[DESCRIPTION]]">
+  <meta name="keywords" content="[[KEYWORDS]]">
+  <meta property="og:image" content="[[OG_IMAGE]]">
+  <meta property="og:title" content="[[OG_TITLE]]">
+
+  <link rel="icon" href="[[FAVICON]]" type="image/[[FAVICON_TYPE]]">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=latin-ext" type="text/css" rel="stylesheet">
+  <script src="https://unpkg.com/imask"></script>
+  <link rel="stylesheet" href="sienge/css/style.css">
+</head>
+
+  <body>
+    <header class="main-header">
+  <div class="main-header__wrap container">
+    <button class="main-header__burgerButton" type="button">
+      <svg aria-hidden="true" width="36" height="36">
+        <use class="" href="sienge/img/sprite.svg#icon-menu-burger"></use>
+      </svg>
+      Открыть меню
+    </button>
+
+    <div class="main-header__left">
+      <a class="main-header__logo logo" href="/">
+        <img class="logo__img" src="" width="130" height="34" alt="">
+      </a>
+
+      <a class="main-header__catalogLink" href="/catalog">
+        <button class="main-header__catalogButton js--catalogButton" type="button">Каталог товаров</button>
+      </a>
+
+      <section class="main-header__popup popup js--catalogPopup">
+        <div class="popup__wrap">
+          <button class="popup__closeButton" type="button">Закрыть</button>
+          <a class="popup__logo logo" href="/">
+            <img class="logo__img" src="" width="130" height="34" alt="">
+          </a>
+          <div class="catalog js--catalog">
+            <a class="catalog__title" href="/catalog">Каталог</a>
+            <ul class="catalog__list"></ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="main-header__center">
+      <div class="popup__wrap popup__wrap--centerHeader">
+        <button class="popup__closeButton" type="button">Закрыть</button>
+        <a class="popup__logo logo" href="/">
+          <img class="logo__img" src="" width="130" height="34" alt="">
+        </a>
+        <div class="main-header__wrapCenter">
+          <div class="main-header__contact contact contact--header">
+            <button class="contact__city js--shopCity hide" type="button"></button>
+            <a class="contact__phone js--shopPhone" href="">
+              <span></span>
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-phone"></use>
+              </svg>
+            </a>
+            <button class="main-header__oldDesignButton hide" type="button" id="toggle_old_design">Старый дизайн</button>
+    
+            <section class="contact__popup popup js--cityListPopup">
+              <div class="popup__wrap">
+                <button class="popup__closeButton" type="button">Закрыть</button>
+                <a class="popup__logo logo" href="/">
+                  <img class="logo__img" src="" width="130" height="34" alt="">
+                </a>
+                <div class="cities cities--popular js--cityListData"></div>
+                <div class="cities cities--alphabet js--alphabetCityListData"></div>
+              </div>
+            </section>
+    
+          </div>
+    
+          <nav class="main-header__nav nav">
+
+            <a class="nav__catalogLink" href="/catalog">
+              <button class="nav__catalogButton js--catalogButton" type="button">Каталог</button>
+            </a>
+
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="/contact">Магазины</a>
+              </li>
+              <li class="nav__item js--bonusNavItem">
+                <a href="/oplata#bonus">Бонусы</a>
+              </li>
+              <li class="nav__item">
+                <a href="/garant">Гарантия</a>
+              </li>
+              <li class="nav__item">
+                <a href="/delivery">Доставка</a>
+              </li>
+              <li class="nav__item js--franchiseNavItem">
+                <a href="/fr">Сотрудничество</a>
+              </li>
+              <li class="nav__item">
+                <a href="/response">Обратная связь</a>
+              </li>
+              <li class="nav__item nav__item--about js--aboutNavItem">
+                <a href="/about">О компании</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        
+      </div>
+    </div>
+
+    
+    <div class="main-header__right">
+      <div class="main-header__search search" data-show-result="false">
+        <form class="search__form" action="/search" id="search" method="get">
+          <input class="search__input" type="search" name="s" placeholder="Поиск по товарам" autocomplete="off">
+          <button class="search__clearButton" type="button" data-mode="hide">Очистить
+            <svg aria-hidden="true" width="14" height="14">
+              <use class="" href="sienge/img/sprite.svg#icon-close"></use>
+            </svg>
+          </button>
+          <button class="search__button" type="submit">Найти
+            <svg aria-hidden="true" width="18" height="18">
+              <use class="" href="sienge/img/sprite.svg#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+        <div class="search__result"></div>
+      </div>
+
+      <button class="main-header__searchButton" type="button">Поиск
+        <svg aria-hidden="true" width="22" height="22">
+          <use class="" href="sienge/img/sprite.svg#icon-search"></use>
+        </svg>
+      </button>
+      <button class="main-header__cancelSearchButton" type="button">
+        Отменить
+      </button>
+
+      <div class="main-header__userBlock userBlock">
+        <ul class="userBlock__list">
+          <li class="userBlock__item userBlock__item--main">
+            <a href="/">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-home"></use>
+              </svg>
+              Главная
+            </a>
+          </li>
+          <li class="userBlock__item userBlock__item--catalog">
+            <a href="/catalog">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-search"></use>
+              </svg>
+              Каталог
+            </a>
+          </li>
+          <li class="userBlock__item userBlock__item--contacts">
+            <a href="/contact">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-phone"></use>
+              </svg>
+              Контакты
+            </a>
+          </li>
+          <li class="userBlock__item userBlock__item--user">
+            <button class="js--authorizationButton" type="button">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-user"></use>
+              </svg>
+              <span>...</span>
+            </button>
+          </li>
+          <li class="userBlock__item userBlock__item--basket">
+            <a class="js--cartHeaderLink" href="/cart" data-count="">
+              <svg aria-hidden="true" width="18" height="18">
+                <use class="" href="sienge/img/sprite.svg#icon-basket"></use>
+              </svg>
+              Корзина
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main class="main-page group-page">
+      <section class="group-page__wrap container">
+        <section class="group-page__nav">
+          <ul class="group-page__navList"></ul>
+        </section>
+        <section class="group-page__content">
+          <h1 class="group-page__title title"></h1>
+          <ul class="group-page__groupList"></ul>
+        </section>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+  <div class="main-footer__wrap container">
+    <div class="main-footer__left">
+      <a class="main-footer__addresses" href="/contact">Адреса магазинов</a>
+      
+      <div class="main-footer__contact contact contact--footer">
+        <a class="contact__phone js--shopPhone" href=""><span></span></a>
+        <button class="contact__city js--shopCity hide" type="button"></button>
+      </div>
+      
+      <div class="main-footer__social social">
+        <ul class="social__list">
+          <li class="social__item">
+            <a class="social__link social__link--vk" href="#">ВКонтакте
+              <svg aria-hidden="true" width="22" height="22">
+                <use class="" href="sienge/img/sprite.svg#icon-vk"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-footer__right">
+      <div class="main-footer__footer-nav footer-nav">
+        <ul class="footer-nav__list">
+          <li class="footer-nav__item">
+            <a href="/about">О компании</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/response">Обратная связь</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/jobs?resume">Вакансии</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/news">Новости</a>
+          </li>
+          <li class="footer-nav__item js--franchiseNavItem">
+            <a href="/fr">Сотрудничество</a>
+          </li>
+        </ul>
+
+        <ul class="footer-nav__list">
+          <li class="footer-nav__item js--bonusNavItem">
+            <a href="/oplata#bonus">Бонусная программа</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/credit">Кредиты</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/delivery">Доставка</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/oplata">Способ оплаты</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="/garant">Обмен и возврат товара</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</footer>
+    <section class="modal authorization js--authorizationModal" data-mode="login">
+  <div class="modal__overlay"></div>
+  <div class="modal__wrap" style="max-width: 500px;">
+    <button class="modal__closeButton" type="button">Закрыть</button>
+
+    <div class="authorization__screen authorization__screen--login">
+      <h2 class="modal__title" style="text-align: left;">Вход / регистрация</h2>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--phoneInput" type="tel" placeholder=" " name="phone">
+        <label>Телефон*</label>
+      </p>
+      
+      <p class="modal__errorMessage"></p>
+
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--getAuthCodeButton" type="button">Получить код</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+
+      <button class="authorization__button modal__button js--inputAuthCodeButton" type="button">Ввести код</button>
+      <button class="modal__link js--loginPasswordButton" type="button">Вход по паролю</button>
+    </div>
+
+    <div class="authorization__screen authorization__screen--code">
+      <div class="modal__titleWrap">
+        <button class="modal__backButton" type="button">
+          <svg aria-hidden="true" width="24" height="24">
+            <use class="" href="sienge/img/sprite.svg#arrow-left"></use>
+          </svg>
+          Назад
+        </button>
+        <h2 class="modal__title modal__title--left">Введите SMS-код</h2>
+      </div>
+
+      <p class="input-placeholder">
+        <input class="js--codeInput" type="number" placeholder=" " name="code" id="code">
+        <label>Код из SMS*</label>
+      </p>
+
+      <p class="modal__text modal__text--grey js--sendCodeText"></p>
+
+      <p class="modal__errorMessage"></p>
+
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--setAuthCodeButton" type="button">Ввести код</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+
+      <p class="modal__text modal__text--grey js--timerGetCodeText" style="margin-bottom: 0;">Запросить новый код <br>вы сможете через 10 минут</p>
+    </div>
+
+    <div class="authorization__screen authorization__screen--loginPassword">
+      <div class="modal__titleWrap">
+        <button class="modal__backButton" type="button">
+          <svg aria-hidden="true" width="24" height="24">
+            <use class="" href="sienge/img/sprite.svg#arrow-left"></use>
+          </svg>
+          Назад
+        </button>
+        <h2 class="modal__title modal__title--left">Вход по паролю</h2>
+      </div>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--loginInput" type="text" placeholder=" " name="login" id="login">
+        <label>Email или телефон*</label>
+      </p>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--passwordInput" type="password" placeholder=" " name="password" id="password">
+        <label>Пароль*</label>
+      </p>
+
+      <button class="modal__link js--recoveryPasswordButton" type="button">Забыли пароль?</button>
+      <p class="modal__text js--sendPasswordText"></p>
+
+      <p class="modal__errorMessage"></p>
+
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--loginButton" type="button">Войти</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="authorization__screen authorization__screen--recoveryPassword">
+      <div class="modal__titleWrap">
+        <button class="modal__backButton" type="button">
+          <svg aria-hidden="true" width="24" height="24">
+            <use class="" href="sienge/img/sprite.svg#arrow-left"></use>
+          </svg>
+          Назад
+        </button>
+        <h2 class="modal__title modal__title--left">Восстановление пароля</h2>
+      </div>
+
+      <p class="authorization__input input-placeholder">
+        <input class="js--loginInput" type="text" placeholder=" " name="login2" id="login2">
+        <label>Email или телефон*</label>
+      </p>
+      
+      <p class="modal__errorMessage"></p>
+      
+      <div class="modal__buttonWrap" data-mode="button">
+        <button class="authorization__button modal__button js--getPasswordButton" type="button">Напомнить</button>
+        <div class="modal__progress">
+          <img src="/sienge/img/load_bar.gif" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <script jstcache="0">
+  const shopListData = [[SHOP_LIST]];
+</script>
+    <script jstcache="0">
+  const shopInfoData = [[SHOP_INFO]];
+</script>
+    <script jstcache="0">
+  const catalogList = [[GROUP_LIST]];
+</script>
+
+    <script src="sienge/js/script.js"></script>
+  
+    [[COUNTERS]]
+  </body>
+</html>
